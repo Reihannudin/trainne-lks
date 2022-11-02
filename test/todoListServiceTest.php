@@ -10,9 +10,9 @@ require_once __DIR__ . '/../entity/todoList.php';
 function testShowTodoList() : void{
     $todoListRepository = new \Repository\todoListRepositoryImpl();
 
-    $todoListRepository->todoList[1] =  new \Entity\TodoList("Makan");
-    $todoListRepository->todoList[2] =  new \Entity\TodoList("Belajar");
-    $todoListRepository->todoList[3] =  new \Entity\TodoList("Tidur");
+    $todoListRepository->todoList[1] =  new \Entity\TodoList();
+    $todoListRepository->todoList[2] =  new \Entity\TodoList();
+    $todoListRepository->todoList[3] =  new \Entity\TodoList();
 
     $todoListService = new todoListServiceImpl($todoListRepository);
 

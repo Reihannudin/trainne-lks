@@ -8,7 +8,7 @@ namespace Service{
 
     use Entity\TodoList;
     use Repository\todoListRepository;
-    use Service\todoListService;
+//    use Service\todoListService;
 
     class todoListServiceImpl implements todoListService {
 
@@ -23,13 +23,13 @@ namespace Service{
             echo "TODOLIST" . PHP_EOL;
             $todolist = $this->todoListRepository->findAll();
             foreach ($todolist as $number => $value){
-                echo "$number." . $value->getTodo() .PHP_EOL;
+                echo $value->getId() . "." . $value->getTodo() .PHP_EOL;
             }
         }
 
         function addTodoList(string $todo): void
         {
-            $todolist = new TodoList($todo);
+            $todolist = new TodoList();
             $this->todoListRepository->save($todolist);
             echo 'success add todo';
 
